@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    My Blog
+{% endblock %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'blog/index.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/stories.css' %}">
+{% endblock %}
+
+{% block content %}
+    <section id="welcome">
+        <p>Hi, I am Abu And Welcome to my story hub</p>
+    </section>
+    <section id="latest-posts">
+        <h2>My latest stories</h2>
+        <ul>
+            {% for story in stories %}
+               {% include 'blog/stories.html' %}
+            {% endfor %}
+        </ul>
+    </section>
+    <section id="about">
+        <h2>What I Do</h2>
+        <p>I’m passionate about crafting stories and love diving into new narratives.</p>
+    </section>
+{% endblock %}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'app.css' %}">
+    {% block css_file %} {% endblock %}
+</head>
+<body>
+    <header id="main-navigation">
+        <h1><a href="{% url 'start' %}">STORY HUB</a></h1>
+        <nav>
+            <a href="{% url 'all-story' %}">Stories</a>
+        </nav>
+    </header>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

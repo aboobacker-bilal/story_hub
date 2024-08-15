@@ -1,0 +1,11 @@
+<li>
+    <article class="post">
+        <a href="{% url 'single-story' story.pk %}">
+            <div>
+                <img src="{{ story.image.url }}" alt="{{ story.title }}">
+                <h3>{{ story.title }}</h3>
+                <p>{{ story.type }}</p>
+            </div>
+        </a>
+    </article>
+</li>

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    {{ story.title }}
+{% endblock %}
+
+{% block css_file %}
+{% endblock %}
+
+{% block content %}
+    <section id="summary">
+      <h2>{{ story.title }}</h2>
+      <article>
+        <img src="{{ story.image.url }}" alt="Post title">
+      </article>
+    </section>
+
+    <main>
+      <p>{{ story.plot|linebreaks }}</p>
+    </main>
+{% endblock %}

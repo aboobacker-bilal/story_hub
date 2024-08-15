@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+    All Stories
+{% endblock %}
+
+{% block css_file %}
+    <link rel="stylesheet" href="{% static 'blog/stories.css' %}">
+    <link rel="stylesheet" href="{% static 'blog/all_stories.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="all-posts">
+    <h2>My Collected Stories</h2>
+    <ul>
+        {% for story in stories %}
+            {% include 'blog/stories.html' %}
+        {% endfor %}
+    </ul>
+</section>
+{% endblock %}
