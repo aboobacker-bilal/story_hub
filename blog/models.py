@@ -6,3 +6,7 @@ class Stories(models.Model):
     type = models.CharField(max_length=60)
     image = models.ImageField(upload_to="posts", null=True)
     plot = models.TextField()
+
+
+class Subscription(models.Model):
+    user_email = models.EmailField()

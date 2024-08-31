@@ -12,7 +12,22 @@
 
 {% block content %}
     <section id="welcome">
-        <p>Hi, I am Abu And Welcome to my story hub</p>
+        <header>
+            <img src="{% static 'images/image.jpg' %}" alt="Abu - The Auther Of This Blog">
+            <div>
+                <p>Hi, I am Abu And Welcome to my story hub</p>
+            </div>
+        </header>
+        <div class="sample">
+            <h3>SUBSCRIBE NOW</h3>
+            <p>Subscribe to our mailing list to receive the latest stories.</p>
+            <form method="post" action="{% url 'start' %}">
+                <p>Email: </p>
+                {% csrf_token %}
+                {{ subscription_form.as_p }}
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
     </section>
     <section id="latest-posts">
         <h2>My latest stories</h2>

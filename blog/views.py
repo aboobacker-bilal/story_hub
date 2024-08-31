@@ -1,12 +1,19 @@
 from django.shortcuts import render
 
 from .models import Stories
+from .forms import SubscriptionForm
 
 
 def starting_page(request):
     stories = Stories.objects.all()
+    subscription_form = SubscriptionForm()
+    if request.method == "POST":
+        subscription_form = SubscriptionForm(request.POST)
+        if subscription_form.is_valid():
+            subscription_form.save()
     context = {
-        "stories": stories
+        "stories": stories,
+        "subscription_form": subscription_form,
     }
     return render(request, "blog/index.html", context)
 
